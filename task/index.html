@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoNames API Explorer</title>
+
+    <!-- Local Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container-fluid py-5 px-4">
+        <h1 class="mb-4 text-center">GeoNames API Explorer</h1>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>API Name</th>
+                        <th>Description</th>
+                        <th>Parameters</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Nearby Weather -->
+                    <tr>
+                        <td>Nearby Weather</td>
+                        <td>Returns weather data near given coordinates.</td>
+                        <td>
+                            <input id="weather-lat" class="form-control mb-2" placeholder="Latitude">
+                            <input id="weather-lng" class="form-control mb-2" placeholder="Longitude">
+                            <div class="form-text">Example: London → 51.5074, -0.1278</div>
+                        </td>
+                        <td>
+                            <button id="weather-btn" class="btn btn-primary">Submit</button>
+                        </td>
+                    </tr>
+
+                    <!-- Country Info -->
+                    <tr>
+                        <td>Country Info</td>
+                        <td>Returns basic info about a country by ISO code.</td>
+                        <td>
+                            <input id="country-code" class="form-control mb-2" placeholder="Country Code">
+                            <div class="form-text">Example: GB, US, FR, DE (2-letter codes)</div>
+                        </td>
+                        <td>
+                            <button id="country-btn" class="btn btn-primary">Submit</button>
+                        </td>
+                    </tr>
+
+                    <!-- Earthquake Data -->
+                    <tr>
+                        <td>Earthquake Data</td>
+                        <td>Returns earthquakes within a bounding box.</td>
+                        <td>
+                            <input id="eq-north" class="form-control mb-1" placeholder="North">
+                            <input id="eq-south" class="form-control mb-1" placeholder="South">
+                            <input id="eq-east" class="form-control mb-1" placeholder="East">
+                            <input id="eq-west" class="form-control mb-1" placeholder="West">
+                            <div class="form-text">England: N:55.8, S:49.9, E:1.8, W:-6.0</div>
+                        </td>
+                        <td>
+                            <button id="earthquake-btn" class="btn btn-primary">Submit</button>
+                        </td>
+                    </tr>
+
+                    <!-- Nearby Postcodes -->
+                    <tr>
+                        <td>Nearby Postcodes</td>
+                        <td>Returns nearby postal codes for given lat/lng.</td>
+                        <td>
+                            <input id="postcode-lat" class="form-control mb-2" placeholder="Latitude">
+                            <input id="postcode-lng" class="form-control mb-2" placeholder="Longitude">
+                            <div class="form-text">Example: London → 51.5074, -0.1278</div>
+                        </td>
+                        <td>
+                            <button id="postcode-btn" class="btn btn-primary">Submit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4 class="mt-5">Results</h4>
+        <pre id="results" class="bg-light border rounded p-3" style="max-height: 400px; overflow-y: auto;"></pre>
+    </div>
+
+    <!-- Bootstrap JS Bundle (local) -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
